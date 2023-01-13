@@ -1,0 +1,35 @@
+data:
+  datamodule: CustomDataModule
+  predict:
+    dataloader:
+      batch_size: 1
+      num_workers: 0
+      pin_memory: false
+    dataset:
+      _name: NoneType
+  train:
+    dataloader:
+      batch_size: 1
+      num_workers: 0
+      pin_memory: false
+    dataset:
+      _name: CustomDataset
+      ann: /path/to/annotation
+      data_dir: /path/to/data
+      transform: CustomDataTransform
+  val:
+    dataloader:
+      batch_size: 1
+      num_workers: 0
+      pin_memory: false
+    dataset:
+      _name: NoneType
+system:
+  _name: CustomSystem
+  loss: MeanAbsoluteError
+  model:
+    _name: CustomModel
+    pretrained: false
+  optimizer:
+    _name: Adam
+    lr: 0.005
