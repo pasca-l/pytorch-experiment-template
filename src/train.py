@@ -21,7 +21,7 @@ def main():
     system = CustomSystem({
         "model": "model",
         "model_name": "CustomModel",
-        "loss": "mae",
+        "loss": "mabs_error",
         "loss_name": "MeanAbsoluteError",
     })
     recorder = ConfigHandler(dataset, system)

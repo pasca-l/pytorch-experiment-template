@@ -27,6 +27,7 @@ class ConfigHandler():
                         "_name": self.sys.optimizer.__class__.__name__,
                         "lr": self.sys.optimizer.param_groups[0]['lr']
                     },
+                    "metric": self.sys.metric.__class__.__name__
                 },
             }, yf, default_flow_style=False)
 

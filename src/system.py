@@ -3,6 +3,8 @@ import importlib
 import pytorch_lightning as pl
 import torch.optim as optim
 
+from metrics.metric import CustomMetric
+
 
 class CustomSystem(pl.LightningModule):
     def __init__(self, config) -> None:
@@ -19,6 +21,7 @@ class CustomSystem(pl.LightningModule):
             self.model.parameters(),
             lr=0.005
         )
+        self.metric = CustomMetric()
 
     def training_step(self, batch, batch_idx):
         loss = None

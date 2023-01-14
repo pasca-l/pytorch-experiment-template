@@ -27,6 +27,7 @@ data:
 system:
   _name: CustomSystem
   loss: MeanAbsoluteError
+  metric: CustomMetric
   model:
     _name: CustomModel
     pretrained: false
